@@ -3,225 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Café 65 Menu</title>
+<title>Cafe 65</title>
 <style>
-/* Reset & Global Styles */
-* {margin:0; padding:0; box-sizing:border-box; font-family:'Arial', sans-serif;}
-body {background:#fdfcf9; color:#333; line-height:1.5;}
-a {text-decoration:none; color:inherit;}
-img {max-width:100%; display:block;}
-
-/* Header */
-header {display:flex; align-items:center; padding:20px 40px; background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1);}
-.logo {width:120px; height:auto; margin-right:20px;}
-.site-title {font-size:1.8rem; font-weight:bold; color:#444;}
-
-/* Main Container */
-main {max-width:1200px; margin:30px auto; padding:0 20px;}
-section {margin-bottom:50px;}
-h2 {font-size:1.8rem; margin-bottom:15px; border-bottom:2px solid #e3e3e3; padding-bottom:5px; color:#444;}
-
-/* Menu Items */
-.menu-item {display:flex; justify-content:space-between; margin-bottom:12px; flex-wrap:wrap;}
-.menu-item .name {font-weight:600;}
-.menu-item .price {font-weight:500;}
-.menu-item .desc {font-size:0.9rem; color:#666; width:100%; margin-top:3px;}
-
-/* Grid for Bowls, Sides, Drinks */
-.grid {display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:15px;}
-.grid .menu-item {flex-direction:column;}
-
-/* Responsive */
-@media(max-width:768px){
-  header {flex-direction:column; align-items:flex-start;}
-  .site-title {margin-top:10px;}
-}
+    * {margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif;}
+    body {background-color:#fff8f0; color:#333;}
+    header {background:#ff6f61; color:#fff; padding:15px 20px; display:flex; justify-content:space-between; align-items:center;}
+    header h1 {font-size:1.8rem;}
+    nav a {color:#fff; text-decoration:none; margin-left:20px; font-weight:bold;}
+    .hero {background-image:url('https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080'); background-size:cover; background-position:center; height:400px; display:flex; align-items:center; justify-content:center; color:white; text-shadow:2px 2px 6px rgba(0,0,0,0.6); font-size:2.5rem;}
+    section {padding:50px 20px; max-width:1200px; margin:auto;}
+    h2 {text-align:center; color:#ff6f61; margin-bottom:30px;}
+    .menu-items {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
+    .menu-item {background:#fff0e5; padding:15px; border-radius:10px; text-align:center;}
+    .menu-item img {width:100%; border-radius:10px;}
+    .locations {display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px;}
+    .location-item {background:#fff0e5; padding:15px; border-radius:10px;}
+    form {max-width:600px; margin:auto; display:flex; flex-direction:column; gap:15px;}
+    input, textarea {padding:10px; border:1px solid #ccc; border-radius:5px;}
+    button {padding:12px; background:#ff6f61; color:white; border:none; border-radius:5px; cursor:pointer; font-size:1rem;}
+    footer {background:#333; color:white; text-align:center; padding:20px; margin-top:50px;}
+    @media(max-width:768px){header {flex-direction:column; text-align:center;} nav {margin-top:10px;}}
 </style>
 </head>
 <body>
 
 <header>
-  <img src="https://via.placeholder.com/120x60?text=Logo" alt="Café Logo" class="logo">
-  <div class="site-title">Café 65</div>
+    <h1>Cafe 65</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#locations">Locations</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
-<main>
-
-<!-- All Day Menu -->
-<section>
-<h2>All Day Menu</h2>
-<div class="menu-item"><div class="name">THE G.O.A.T (Big Brekkie)</div><div class="price">$35.5</div><div class="desc">Two eggs your way, crispy bacon, chippos, haloumi, hash brown, avocado, sautéed mushrooms, grilled tomatoes, sourdough, lemon wedge, homemade provencale sauce</div></div>
-<div class="menu-item"><div class="name">Vintage Brekkie</div><div class="price">$23.5</div><div class="desc">Eggs your way, rasher bacon, hash browns, on sourdough toast, tomato relish</div></div>
-<div class="menu-item"><div class="name">The Brekkie</div><div class="price">$21</div><div class="desc">Two eggs your way, crispy bacon, chippos, sourdough, homemade provencale sauce (Add haloumi $5.5, Add hashbrown $5.5)</div></div>
-<div class="menu-item"><div class="name">Veggie Brekkie</div><div class="price">$26.99</div><div class="desc">Two eggs your way, hash brown, haloumi, mushrooms, grilled tomatoes, homemade provencale sauce, sourdough, avocado</div></div>
-<div class="menu-item"><div class="name">The Benedict</div><div class="price">$26.99</div><div class="desc">Two poached eggs, avo, fresh spinach, hashbrown, sourdough, with house hollandaise and dukkah (Choice of bacon or ham, Extra salmon $3, Add grilled haloumi $5, Upgrade to Turkish Bread $2)</div></div>
-<div class="menu-item"><div class="name">Brisket Benedict</div><div class="price">$26.99</div><div class="desc">Pulled beef brisket on crispy hash browns, topped with poached eggs, house hollandaise and dukkah</div></div>
-<div class="menu-item"><div class="name">Truffle Mushrooms</div><div class="price">$24</div><div class="desc">Toasted sourdough, mushrooms, poached eggs, halloumi, parmesan cheese, dukkah, truffle oil, micro herbs (Add 2 rasher bacon $7, Add avo $5)</div></div>
-<div class="menu-item"><div class="name">Savoury Mince on Toast</div><div class="price">$22</div><div class="desc">Lean Aussie minced beef, sourdough, poached egg (Add hashbrown $5)</div></div>
-<div class="menu-item"><div class="name">Fiery Chilli Scramble</div><div class="price">$24</div><div class="desc">Scrambled eggs tossed with fresh chilli, feta, roasted cherry tomatoes, house-made spicy sauce with housemade chilli oil, fresh spinach, toasted sourdough</div></div>
-<div class="menu-item"><div class="name">Homemade Baked Beans</div><div class="price">$18.5</div><div class="desc">Cannellini beans simmered in smoky bacon & spicy tomato sauce topped with parmesan, hashbrown</div></div>
-<div class="menu-item"><div class="name">Canadian Breakfast</div><div class="price">$23.5</div><div class="desc">House-made pancakes with seasonal fruits, crispy bacon, fried egg, golden hashbrown, maple syrup</div></div>
-<div class="menu-item"><div class="name">Smashed Avo</div><div class="price">$20.9</div><div class="desc">2 poached eggs, cherry tomatoes, balsamic glaze, watermelon radish, avocado, feta cheese, dukkah, lemon wedge</div></div>
-<div class="menu-item"><div class="name">Heaven Brekkie Burger</div><div class="price">$24</div><div class="desc">Milky toasted burger bun, Angus pressed patty, house hash, streaky bacon, salad mix, haloumi heavenly sauce, crunchy fries</div></div>
-<div class="menu-item"><div class="name">B.L.T</div><div class="price">$14</div><div class="desc">Bacon, lettuce, tomato, mayo, Turkish bread</div></div>
-<div class="menu-item"><div class="name">B.L.A. Tacular Roll</div><div class="price">$17</div><div class="desc">Bacon, lettuce, tomato, mayo, avo, Turkish bread</div></div>
-</section>
-
-<!-- Loaded Line-Up -->
-<section>
-<h2>Loaded Line-Up</h2>
-<div class="menu-item"><div class="name">Morning Stack</div><div class="price">$21</div><div class="desc">Toasted Turkish bread filled with double bacon, fried eggs, relish & melted cheese, served with a side of crispy chips and aioli</div></div>
-<div class="menu-item"><div class="name">Hangover Roll</div><div class="price">$19.5</div><div class="desc">Double rasher bacon, double hash brown, fried egg, cheese, spinach, avocado with hollandaise sauce (Add halloumi $5)</div></div>
-<div class="menu-item"><div class="name">Holy Halloumi</div><div class="price">$19</div><div class="desc">Halloumi slices, double hash brown, fried egg, smashed avocado, baby spinach, aioli, tomato on toasted roll or wrap (Add bacon $4)</div></div>
-<div class="menu-item"><div class="name">Spicy Chicken Wrap</div><div class="price">$19</div><div class="desc">Grilled chicken, house made spicy sauce, carrot & cucumber, red onion, mix leaf, cheese, avocado, garlic aioli drizzle & hash brown</div></div>
-</section>
-
-<!-- Power Bowls -->
-<section>
-<h2>Power Bowls</h2>
-<div class="grid">
-<div class="menu-item"><div class="name">Granola Health Bowl</div><div class="price">$19</div><div class="desc">House made granola, coconut yogurt, seasonal fruit, coconut flakes</div></div>
-<div class="menu-item"><div class="name">Super Seeds Bowl</div><div class="price">$22</div><div class="desc">Coconut yogurt, granola, seasonal fruits, pumpkin, sunflower, chia seeds, crushed pistachio, coconut flakes, cacao nibs</div></div>
-<div class="menu-item"><div class="name">Açai Bowl</div><div class="price">$20</div><div class="desc">House-made granola, açai, seasonal fruit (Add peanut butter $3)</div></div>
+<div class="hero">
+    Welcome to Cafe 65!
 </div>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p style="text-align:center;">Cafe 65 brings you the finest coffee and delicious snacks in a cozy atmosphere. Our mission is to make every visit memorable.</p>
 </section>
 
-<!-- Desserts -->
-<section>
-<h2>Desserts</h2>
-<div class="menu-item"><div class="name">Pancake Paradise</div><div class="price">$23</div><div class="desc">House-made pancakes with seasonal fruits, caramelised banana, ice cream, butterscotch, maple syrup, crushed pistachios</div></div>
-<div class="menu-item"><div class="name">French Toast Brûlée</div><div class="price">$23</div><div class="desc">Golden French toast with custard center, seasonal fruits, Biscoff crumble, ice cream, maple syrup</div></div>
+<section id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-items">
+        <div class="menu-item">
+            <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Coffee">
+            <h3>Coffee</h3>
+            <p>Rich and aromatic coffee.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Pastry">
+            <h3>Pastries</h3>
+            <p>Freshly baked every day.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://images.unsplash.com/photo-1601924928368-1b7c5dbef5f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Desserts">
+            <h3>Desserts</h3>
+            <p>Sweet treats for everyone.</p>
+        </div>
+    </div>
 </section>
 
-<!-- Sides -->
-<section>
-<h2>Sides</h2>
-<div class="grid">
-<div class="menu-item"><div class="name">Salmon</div><div class="price">$7</div></div>
-<div class="menu-item"><div class="name">Avocado</div><div class="price">$5</div></div>
-<div class="menu-item"><div class="name">Cage free eggs</div><div class="price">$3</div></div>
-<div class="menu-item"><div class="name">Hollandaise</div><div class="price">$4.5</div></div>
-<div class="menu-item"><div class="name">Jug of provencale</div><div class="price">$3</div></div>
-<div class="menu-item"><div class="name">Grilled tomatoes</div><div class="price">$4.5</div></div>
-<div class="menu-item"><div class="name">Hash brown (2)</div><div class="price">$5.5</div></div>
-<div class="menu-item"><div class="name">Rasher bacon (2)</div><div class="price">$7</div></div>
-<div class="menu-item"><div class="name">Wilted spinach (80gm)</div><div class="price">$5</div></div>
-<div class="menu-item"><div class="name">Sautéed mushroom (100gm)</div><div class="price">$4.5</div></div>
-<div class="menu-item"><div class="name">Homemade baked beans</div><div class="price">$7</div></div>
-<div class="menu-item"><div class="name">Halloumi</div><div class="price">$5.5</div></div>
-<div class="menu-item"><div class="name">Savoury mince</div><div class="price">$7.5</div></div>
-<div class="menu-item"><div class="name">Onion rings</div><div class="price">$10</div></div>
-<div class="menu-item"><div class="name">Bowl of chips with aioli</div><div class="price">$11</div></div>
-<div class="menu-item"><div class="name">Sweet potato chips with aioli</div><div class="price">$12</div></div>
-<div class="menu-item"><div class="name">Roasted chicken</div><div class="price">$6</div></div>
-<div class="menu-item"><div class="name">Extra sauce or relish</div><div class="price">$1.5</div></div>
-</div>
+<section id="locations">
+    <h2>Our Locations</h2>
+    <div class="locations">
+        <div class="location-item">
+            <h3>Stretton</h3>
+            <p>123 Main Street, Stretton</p>
+            <p>Call: +91-7015780559</p>
+        </div>
+        <div class="location-item">
+            <h3>Central Cafe 65</h3>
+            <p>456 Central Avenue, City</p>
+            <p>Call: +91-7015780559</p>
+        </div>
+    </div>
 </section>
 
-<!-- Mini Meals -->
-<section>
-<h2>Mini Meals</h2>
-<div class="menu-item"><div class="name">Mini Hash Bene</div><div class="price">$12.99</div><div class="desc">Crispy hashbrown, soft egg & house hollandaise (Add Bacon/Smoked Salmon $3, Avocado)</div></div>
-<div class="menu-item"><div class="name">Brekkie Roll</div><div class="price">$7.9</div><div class="desc">Bacon, hashbrown, fried egg (Add BBQ/Tomato sauce $0.8, Cheese $1.5, Crunchy fries $4.5, Grilled halloumi $5)</div></div>
-<div class="menu-item"><div class="name">Beef Burger</div><div class="price">$14.9</div><div class="desc">Pressed Angus beef patty, American cheese, lettuce, aioli, side of fries (Add crispy bacon $4, hash brown $2.5)</div></div>
-<div class="menu-item"><div class="name">Mini Smashed Avo</div><div class="price">$9.5</div><div class="desc">Sourdough toast, smashed avocado, cherry tomatoes, lemon wedge, balsamic glaze, watermelon radish</div></div>
-<div class="menu-item"><div class="name">Mini Fish & Chips</div><div class="price">$11.9</div></div>
-<div class="menu-item"><div class="name">Fish Burger</div><div class="price">$13.9</div><div class="desc">Crumbed white fish, tomato lettuce, Southwest chipotle mayo on toasted burger bun with fries</div></div>
-<div class="menu-item"><div class="name">Small Brekkie</div><div class="price">$13.5</div><div class="desc">One egg, crispy bacon, chippos, sourdough, homemade provencale sauce (Add haloumi $5.5, mushrooms $5)</div></div>
-<div class="menu-item"><div class="name">Mini Hotcakes</div><div class="price">$12</div></div>
-<div class="menu-item"><div class="name">Eggs on Toast</div><div class="price">$13</div><div class="desc">Two eggs, sourdough (Upgrade to Turkish Bread $2, Add bacon 2 rashers $7, Haloumi $5)</div></div>
+<section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="tel" placeholder="Your Phone Number" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+    <p style="text-align:center; margin-top:15px;">Call us: <strong>+91-7015780559</strong> | Email: <strong>yogeshyogesh65059@gmail.com</strong></p>
 </section>
 
-<!-- Lunch Menu -->
-<section>
-<h2>Lunch Menu</h2>
-<div class="menu-item"><div class="name">Homemade Soup</div><div class="price">$12.5</div></div>
-<div class="menu-item"><div class="name">Homemade Quiche</div><div class="price">$14.5</div><div class="desc">Side salad (Add chips $5)</div></div>
-<div class="menu-item"><div class="name">Tempura Fish & Chips</div><div class="price">$23</div><div class="desc">Fresh garden salad, 3 pieces of fish, tartare sauce, lemon wedge, chips or nuggets</div></div>
-<div class="menu-item"><div class="name">Warm Beef Salad with Thai Dressing</div><div class="price">$22</div><div class="desc">150gm steak, salad, homemade Thai dressing, peanuts, dried onion, lemon wedge, rice noodles</div></div>
-<div class="menu-item"><div class="name">Smoked Salmon Salad</div><div class="price">$22</div></div>
-<div class="menu-item"><div class="name">Chicken Caesar Salad</div><div class="price">$22</div></div>
-<div class="menu-item"><div class="name">Pork Belly Chef’s Special</div><div class="price">$23</div><div class="desc">8 hours braised deep fried pork belly, honey sweet soy sauce, salad, hashbrown, rice noodles, pickles</div></div>
-</section>
-
-<!-- Gourmet Burgers -->
-<section>
-<h2>Gourmet Burgers</h2>
-<div class="menu-item"><div class="name">Homemade Hamburger</div><div class="price">$21.5</div></div>
-<div class="menu-item"><div class="name">Chicken Burger</div><div class="price">$22</div><div class="desc">(Add one rasher bacon $4)</div></div>
-<div class="menu-item"><div class="name">Veggie Burger</div><div class="price">$19</div></div>
-<div class="menu-item"><div class="name">Double Cheeseburger</div><div class="price">$25</div></div>
-<div class="menu-item"><div class="name">O.G Burger</div><div class="price">$27</div></div>
-<div class="menu-item"><div class="name">Steak Sandwich</div><div class="price">$25.5</div></div>
-<div class="menu-item"><div class="name">Beef Brisket Burger</div><div class="price">$26.5</div></div>
-</section>
-
-<!-- Sandwiches -->
-<section>
-<h2>Fresh Gourmet Sandwiches</h2>
-<div class="menu-item"><div class="name">Smoky BBQ Brisket Toastie</div><div class="price">$20.5</div></div>
-<div class="menu-item"><div class="name">Ham & Camembert</div><div class="price">$14</div></div>
-<div class="menu-item"><div class="name">Roast Chicken</div><div class="price">$14</div></div>
-<div class="menu-item"><div class="name">Smoked Salmon</div><div class="price">$14.5</div></div>
-<div class="menu-item"><div class="name">Egg Salad</div><div class="price">$13</div></div>
-<div class="menu-item"><div class="name">Salad Sandwich</div><div class="price">$11.5</div></div>
-<div class="menu-item"><div class="name">Ruben Sandwich</div><div class="price">$15</div></div>
-<div class="menu-item"><div class="name">Ham & Cheese</div><div class="price">$8.5</div></div>
-<div class="menu-item"><div class="name">Ham, Cheese & Tomato</div><div class="price">$9.5</div></div>
-<div class="menu-item"><div class="name">Ham & Pineapple</div><div class="price">$9</div></div>
-<div class="menu-item"><div class="name">4 Cheese Toastie</div><div class="price">$13</div></div>
-</section>
-
-<!-- Smoothies -->
-<section>
-<h2>Smoothies</h2>
-<div class="grid">
-<div class="menu-item"><div class="name">Bangin Banana</div><div class="price">$11</div></div>
-<div class="menu-item"><div class="name">Awaken</div><div class="price">$11</div></div>
-<div class="menu-item"><div class="name">Mango Macadamia</div><div class="price">$11</div></div>
-<div class="menu-item"><div class="name">Matcha Macadamia</div><div class="price">$11</div></div>
-<div class="menu-item"><div class="name">Acai Smoothie</div><div class="price">$11</div></div>
-<div class="menu-item"><div class="name">Gym Junkie</div><div class="price">$12.5</div></div>
-<div class="menu-item"><div class="name">PB Protein Smoothie</div><div class="price">$12.5</div></div>
-<div class="menu-item"><div class="name">Green Energizer</div><div class="price">$11</div></div>
-</div>
-</section>
-
-<!-- Hot Drinks -->
-<section>
-<h2>Hot Drinks</h2>
-<div class="menu-item"><div class="name">Tea</div><div class="price">$5.5</div><div class="desc">English breakfast, Earl grey, Peppermint, Malbar chai, etc.</div></div>
-<div class="menu-item"><div class="name">Coffee</div><div class="price">$5.5-$6</div><div class="desc">Espresso, Flat white, Latte, Cappuccino, Mocha</div></div>
-<div class="menu-item"><div class="name">Hot Chocolate</div><div class="price">$6</div></div>
-</section>
-
-<!-- Juices / Iced Drinks / Milkshakes / Frappes -->
-<section>
-<h2>Fresh Juices & Iced Drinks</h2>
-<div class="grid">
-<div class="menu-item"><div class="name">Straight OJ / Apple</div><div class="price">$9</div></div>
-<div class="menu-item"><div class="name">Citrus Cleanse</div><div class="price">$11</div></div>
-<div class="menu-item"><div class="name">Morning Fix</div><div class="price">$11</div></div>
-<div class="menu-item"><div class="name">Green Revive</div><div class="price">$11</div></div>
-<div class="menu-item"><div class="name">Tropical Glow</div><div class="price">$11</div></div>
-<div class="menu-item"><div class="name">Iced Latte</div><div class="price">$6.5</div></div>
-<div class="menu-item"><div class="name">Iced Coffee</div><div class="price">$9</div></div>
-<div class="menu-item"><div class="name">Iced Chocolate</div><div class="price">$8</div></div>
-<div class="menu-item"><div class="name">Iced Mocha</div><div class="price">$9</div></div>
-<div class="menu-item"><div class="name">Iced Matcha</div><div class="price">$8</div></div>
-<div class="menu-item"><div class="name">Iced Protein Latte</div><div class="price">$12</div></div>
-<div class="menu-item"><div class="name">Strawberry Matcha</div><div class="price">$9</div></div>
-<div class="menu-item"><div class="name">House Made Iced Tea</div><div class="price">$6</div></div>
-<div class="menu-item"><div class="name">Iced Long Black</div><div class="price">$6</div></div>
-<div class="menu-item"><div class="name">Chai / Dirty Chai</div><div class="price">$7-$8.5</div></div>
-<div class="menu-item"><div class="name">Milk Shakes</div><div class="price">$7</div></div>
-<div class="menu-item"><div class="name">Thick Shakes</div><div class="price">$10</div></div>
-<div class="menu-item"><div class="name">Frappes</div><div class="price">$8.5</div></div>
-<div class="menu-item"><div class="name">Signature Drinks</div><div class="price">$12</div></div>
-</div>
-</section>
-
-</main>
+<footer>
+    &copy; 2026 Cafe 65. All rights reserved.
+</footer>
 
 </body>
 </html>
