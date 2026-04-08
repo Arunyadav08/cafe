@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cafe 65</title>
+
+<style>
+body { margin:0; font-family:Arial; }
+
+/* Navbar */
+header {
+  display:flex; justify-content:space-between;
+  padding:15px 30px;
+  background:#000; color:#fff;
+}
+nav a { color:#fff; margin:0 10px; text-decoration:none; }
+
+/* Hero */
+.hero {
+  height:100vh;
+  background:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover;
+  display:flex; flex-direction:column;
+  justify-content:center; align-items:center;
+  color:#fff;
+}
+
+/* Menu */
+.menu {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+  padding:20px;
+}
+.item {
+  background:#f4f4f4;
+  padding:15px;
+  border-radius:10px;
+}
+
+/* Cart */
+.cart {
+  position:fixed;
+  right:0;
+  top:50%;
+  background:#000;
+  color:#fff;
+  padding:10px;
+}
+
+/* Admin */
+.admin { display:none; padding:20px; background:#222; color:#fff; }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>Cafe 65</h2>
+  <nav>
+    <a href="#menu">Menu</a>
+    <a href="#" onclick="showAdmin()">Admin</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Welcome to Cafe 65</h1>
+  <p>Best Coffee & Food</p>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="menu"></section>
+
+<!-- CART -->
+<div class="cart">
+  <h4>Cart</h4>
+  <div id="cartItems"></div>
+  <button onclick="sendWhatsApp()">Order Now</button>
+</div>
+
+<!-- ADMIN -->
+<section class="admin" id="adminPanel">
+  <h3>Admin Login</h3>
+  <input type="password" id="pass" placeholder="Password">
+  <button onclick="login()">Login</button>
+
+  <div id="controls" style="display:none;">
+    <input id="name" placeholder="Item Name">
+    <input id="price" type="number" placeholder="Price">
+    <button onclick="addItem()">Add Item</button>
+  </div>
+</section>
+
+<script>
+let menu = JSON.parse(localStorage.getItem("menu")) || [
+  {name:"Coffee",price:150},
+  {name:"Burger",price:250}
+];
+
+let cart=[];
+
+function renderMenu(){
+  let html="";
+  menu.forEach((m,i)=>{
+    html+=`
+    <div class="item">
+      ${m.name} - ₹${m.price}
+      <br>
+      <button onclick="addToCart(${i})">Add</button>
+    </div>`;
+  });
+  document.getElementById("menu").innerHTML=html;
+}
+renderMenu();
+
+function addItem(){
+  let n=document.getElementById("name").value;
+  let p=document.getElementById("price").value;
+  menu.push({name:n,price:p});
+  localStorage.setItem("menu",JSON.stringify(menu));
+  renderMenu();
+}
+
+function addToCart(i){
+  cart.push(menu[i]);
+  renderCart();
+}
+
+function renderCart(){
+  let html="";
+  cart.forEach(c=>{
+    html+=`${c.name} - ₹${c.price}<br>`;
+  });
+  document.getElementById("cartItems").innerHTML=html;
+}
+
+function sendWhatsApp(){
+  let msg="Order:%0A";
+  cart.forEach(c=>{
+    msg+=c.name+" - ₹"+c.price+"%0A";
+  });
+  window.open("https://wa.me/91xxxxxxx?text="+msg);
+}
+
+function showAdmin(){
+  document.getElementById("adminPanel").style.display="block";
+}
+
+function login(){
+  let p=document.getElementById("pass").value;
+  if(p==="1234"){
+    document.getElementById("controls").style.display="block";
+    alert("Login Success");
+  } else alert("Wrong Password");
+}
+</script>
+
+</body>
+</html>
