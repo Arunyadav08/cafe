@@ -4,169 +4,51 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cafe 65</title>
-<style>
-    * {margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif;}
-    body {background-color:#fff8f0; color:#333;}
-    header {background:#ff6f61; color:#fff; padding:15px 20px; display:flex; justify-content:space-between; align-items:center;}
-    header h1 {font-size:1.8rem;}
-    nav a {color:#fff; text-decoration:none; margin-left:20px; font-weight:bold;}
-    .hero {background-image:url('https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080'); background-size:cover; background-position:center; height:400px; display:flex; align-items:center; justify-content:center; color:white; text-shadow:2px 2px 6px rgba(0,0,0,0.6); font-size:2.5rem;}
-    section {padding:50px 20px; max-width:1200px; margin:auto;}
-    h2 {text-align:center; color:#ff6f61; margin-bottom:30px;}
-    .menu-items {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
-    .menu-item {background:#fff0e5; padding:15px; border-radius:10px; text-align:center;}
-    .menu-item img {width:100%; border-radius:10px;}
-    .locations {display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px;}
-    .location-item {background:#fff0e5; padding:15px; border-radius:10px;}
-    form {max-width:600px; margin:auto; display:flex; flex-direction:column; gap:15px;}
-    input, textarea {padding:10px; border:1px solid #ccc; border-radius:5px;}
-    button {padding:12px; background:#ff6f61; color:white; border:none; border-radius:5px; cursor:pointer; font-size:1rem;}
-    footer {background:#333; color:white; text-align:center; padding:20px; margin-top:50px;}
-    @media(max-width:768px){header {flex-direction:column; text-align:center;} nav {margin-top:10px;}}
-</style>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .topbar {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .topbar .logo {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .topbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .topbar a:hover {
+            color: #f2a365;
+        }
+    </style>
 </head>
 <body>
-
-<header>
-    <h1>Cafe 65</h1>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#menu">Menu</a>
-        <a href="#locations">Locations</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
-
-<div class="hero">
-    Welcome to Cafe 65!
-</div>
-
-<section id="about">
-    <h2>About Us</h2>
-    <p style="text-align:center;">Cafe 65 brings you the finest coffee and delicious snacks in a cozy atmosphere. Our mission is to make every visit memorable.</p>
-</section>
-
-<section id="menu">
-    <h2>Our Menu</h2>
-
-    <!-- All Day Menu -->
-    <h3>All Day Menu</h3>
-    <div class="menu-items">
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="THE G.O.A.T">
-            <h4>THE G.O.A.T (Big Brekkie) - $35.5</h4>
-            <p>Two eggs your way, crispy bacon, chippos, haloumi, hash brown, avocado, sautéed mushrooms, grilled tomatoes, sourdough, lemon wedge, homemade provencale sauce</p>
-        </div>
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Vintage Brekkie">
-            <h4>Vintage Brekkie - $23.5</h4>
-            <p>Eggs your way, rasher bacon, hash browns, on sourdough toast, tomato relish</p>
-        </div>
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1572449043417-2d0e3c58d8f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="The Brekkie">
-            <h4>The Brekkie - $21</h4>
-            <p>Two eggs your way, crispy bacon, chippos, sourdough, homemade provencale sauce</p>
-        </div>
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1604908177525-634d2c4b3c05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Veggie Brekkie">
-            <h4>Veggie Brekkie - $26.99</h4>
-            <p>Two eggs your way, hash brown, haloumi, mushrooms, grilled tomatoes, homemade provencale sauce, sourdough, avocado</p>
+ <div class="topbar">
+        <div class="logo">MySite</div>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+           <a href="#">Menu</a>
+           <a href="#">Book Now</a>
+           <a href="#">Location</a>
+            <a href="#">Contact</a>
+            
         </div>
     </div>
-
-    <!-- Mini Meals -->
-    <h3>Mini Meals</h3>
-    <div class="menu-items">
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1598514983334-71c5b3a7b7ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Mini Hash Bene">
-            <h4>Mini Hash Bene - $12.99</h4>
-            <p>Crispy hashbrown, soft egg & house hollandaise, add choice of bacon/salmon/avocado</p>
-        </div>
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1617196038456-60300bb90d5c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Brekkie Roll">
-            <h4>Brekkie Roll - $7.9</h4>
-            <p>Bacon, hashbrown, fried egg, add BBQ/tomato sauce 80c, cheese $1.5, crunchy fries $4.5, halloumi $5</p>
-        </div>
-    </div>
-
-    <!-- Lunch Menu -->
-    <h3>Lunch Menu</h3>
-    <div class="menu-items">
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1604908177525-634d2c4b3c05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Homemade Soup">
-            <h4>Homemade Soup - $12.5</h4>
-            <p>Today’s freshly made soup with sourdough</p>
-        </div>
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1598514983334-71c5b3a7b7ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Tempura Fish & Chips">
-            <h4>Tempura Fish & Chips - $23</h4>
-            <p>Fresh garden salad, 3 pieces of fish, tartar sauce, lemon wedge, chips or nuggets</p>
-        </div>
-    </div>
-
-    <!-- Gourmet Burgers -->
-    <h3>Gourmet Burgers</h3>
-    <div class="menu-items">
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1606755962777-0b48f5a6b4aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Homemade Hamburger">
-            <h4>Homemade Hamburger - $21.5</h4>
-            <p>Milky bun, homemade beef patty, tomato, mustard sauce, cheese, bacon, caramelised onion, lettuce, crunchy fries</p>
-        </div>
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Chicken Burger">
-            <h4>Chicken Burger - $22</h4>
-            <p>Milky bun, southern style chicken, lettuce, tomato, crunchy fries, chipotle sauce and cheese</p>
-        </div>
-    </div>
-
-    <!-- Smoothies & Drinks -->
-    <h3>Smoothies & Drinks</h3>
-    <div class="menu-items">
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1604908177525-634d2c4b3c05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Bangin Banana Smoothie">
-            <h4>Bangin Banana - $11</h4>
-            <p>Banana, cacao nibs, almond milk, cinnamon, honey</p>
-        </div>
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1572449043417-2d0e3c58d8f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Iced Latte">
-            <h4>Iced Latte - $6.5</h4>
-            <p>Refreshing cold coffee drink</p>
-        </div>
-    </div>
-
-</section>
-
-<section id="locations">
-    <h2>Our Locations</h2>
-    <div class="locations">
-        <div class="location-item">
-            <h3>Stretton</h3>
-            <p>123 Main Street, Stretton</p>
-            <p>Call: +91-7015780559</p>
-        </div>
-        <div class="location-item">
-            <h3>Central Cafe 65</h3>
-            <p>456 Central Avenue, City</p>
-            <p>Call: +91-7015780559</p>
-        </div>
-    </div>
-</section>
-
-<section id="contact">
-    <h2>Contact Us</h2>
-    <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="tel" placeholder="Your Phone Number" required>
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-    <p style="text-align:center; margin-top:15px;">Call us: <strong>+91-7015780559</strong> | Email: <strong>yogeshyogesh65059@gmail.com</strong></p>
-</section>
-
-<footer>
-    &copy; 2026 Cafe 65. All rights reserved.
-</footer>
 
 </body>
 </html>
