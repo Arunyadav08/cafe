@@ -35,10 +35,48 @@
             color: #f2a365;
         }
     </style>
+   <!--- style for logo---> 
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .topbar {
+            background-color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo img {
+            height: 40px; /* control logo size */
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: #f2a365;
+        }
+    </style>
 </head>
 <body>
  <div class="topbar">
-        <div class="logo">MySite</div>
+        <!-- Logo -->
+        <div class="logo">
+            <img src="logo.jpg">
+        </div>
+     <div class="nav-icons">
+            <i class="fas fa-search"></i>   <!-- Search -->
+            <i class="fas fa-user"></i>     <!-- Profile -->
+            <i class="fas fa-shopping-cart"></i> <!-- Cart -->
+        </div>
         <div>
             <a href="#">Home</a>
             <a href="#">About</a>
