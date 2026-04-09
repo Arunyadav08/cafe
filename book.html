@@ -5,163 +5,116 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Book Now - Cafe 65</title>
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', sans-serif; }
-body { background:#f5f5f5; display:flex; flex-direction:column; }
+/* RESET & BASE */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI', sans-serif;}
+body { display:flex; flex-direction:column; background:#f5f5f5; }
 
-/* DESKTOP LAYOUT */
+/* MAIN LAYOUT DESKTOP */
 .main {
-  display:grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  gap:15px;
+  display:flex;
   height:100vh;
-  padding:15px;
+  gap:10px;
+  padding:10px;
 }
 
-/* SIDE IMAGES */
+/* LEFT & RIGHT SIDE IMAGES */
 .side {
+  width:25%;
   display:flex;
   flex-direction:column;
-  gap:15px;
+  gap:5px;
 }
 .side img {
   width:100%;
-  height:calc((100vh - 60px)/3);
+  height:calc((100vh - 40px)/3);
   object-fit:cover;
-  border-radius:12px;
+  border-radius:10px;
   transition: transform 0.3s;
 }
-.side img:hover { transform:scale(1.05); }
+.side img:hover { transform:scale(1.03); }
 
-/* CENTER */
+/* CENTER BOX DESKTOP */
 .center {
-  position:relative;
+  width:50%;
   display:flex;
   justify-content:center;
   align-items:center;
-  border-radius:12px;
-  overflow:hidden;
+  position:relative;
   background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4');
   background-size:cover;
   background-position:center;
+  border-radius:12px;
 }
 .center::before {
   content:"";
-  position:absolute; top:0; left:0;
-  width:100%; height:100%;
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:100%;
   background:rgba(0,0,0,0.4);
 }
-
-/* BOX */
 .box {
-  position:relative; z-index:1;
+  position:relative;
+  z-index:1;
   background:white;
-  padding:35px 25px;
-  width:80%; max-width:450px;
+  padding:30px;
+  width:80%;
   text-align:center;
-  box-shadow:0 15px 35px rgba(0,0,0,0.25);
+  box-shadow:0 0 20px rgba(0,0,0,0.3);
   border-radius:15px;
 }
-.box p {
-  font-size:15px;
-  margin-bottom:18px;
-  color:#333;
-  line-height:1.5;
-}
+.box p { font-size:13px; margin-bottom:15px; color:#333; line-height:1.4; }
 .btn {
-  display:inline-block;
+  display:block;
   background:#111;
   color:white;
-  padding:12px 0;
-  margin:5px;
+  padding:12px;
+  margin:8px 0;
   text-decoration:none;
-  font-size:15px;
-  border-radius:10px;
-  width:48%;
-  text-align:center;
+  font-size:14px;
+  border-radius:5px;
   transition:0.3s;
 }
 .btn:hover { background:#28a745; }
-.contact {
-  margin-top:20px;
-  font-size:14px;
-  font-weight:600;
-  color:#555;
-}
+.contact { margin-top:15px; font-size:13px; color:#555; }
 
-/* FOOTER */
+/* FOOTER DESKTOP */
 .footer {
   background: linear-gradient(to right, #1c1c1c, #2b2b2b);
   color:white;
-  padding:50px 20px;
+  padding: 40px 20px;
 }
 .footer-container {
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:25px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-.footer-left h2 {
-  margin-bottom:20px;
-  font-size:20px;
-  line-height:1.4;
-}
-.email-box {
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-bottom:15px;
-}
-.email-box input {
-  flex:1 1 60%;
-  padding:12px;
-  border:none;
-  border-radius:6px;
-  font-size:14px;
-}
-.email-box button {
-  flex:1 1 35%;
-  padding:12px;
-  border:none;
-  border-radius:6px;
-  background:white;
-  font-size:16px;
-  cursor:pointer;
-}
-.footer-right {
-  display:flex;
-  gap:60px;
-  flex-wrap:wrap;
-}
-.footer-right h3 { margin-bottom:12px; font-size:16px; }
-.footer-right p { margin:6px 0; font-size:14px; }
-.footer-bottom {
-  text-align:center;
-  margin-top:25px;
-  border-top:1px solid #444;
-  padding-top:15px;
-  font-size:14px;
-  font-weight:500;
-}
+.footer-left h2 { margin-bottom: 15px; font-size:20px; line-height:1.3; }
+.email-box { display:flex; margin-bottom: 15px; gap:10px; }
+.email-box input { padding: 10px; border: none; flex:1; border-radius:6px; }
+.email-box button { padding: 10px; border: none; background: white; cursor:pointer; border-radius:6px; }
+.footer-right { display: flex; gap: 40px; flex-wrap:wrap; }
+.footer-right h3 { margin-bottom: 10px; font-size:16px; }
+.footer-right p { margin: 5px 0; font-size:14px; }
+.footer-bottom { text-align: center; margin-top: 20px; border-top: 1px solid #444; padding-top: 10px; font-size:14px; }
 
-/* ===== MOBILE ===== */
-@media (max-width:900px) {
-  .main {
-    display:flex;
-    flex-direction:column;
-    height:auto;
-    gap:10px;
-    padding:10px;
-  }
-  .side { flex-direction:row; justify-content:space-between; }
-  .side img { height:100px; width:32%; } /* smaller horizontal images */
-  .center { height:auto; padding:15px 0; }
+/* ---------------- MOBILE ---------------- */
+@media(max-width:900px){
+  .main { flex-direction:column; height:auto; }
+  .side { flex-direction:row; justify-content:space-between; width:100%; }
+  .side img { width:32%; height:100px; }
+  .center { width:100%; height:auto; padding:20px 0; border-radius:12px; }
   .box { width:95%; padding:20px; }
-  .btn { width:48%; margin:1%; font-size:14px; }
+  .box p { font-size:14px; }
+  .btn { display:inline-block; width:48%; margin:5px 1%; font-size:14px; padding:12px 0; border-radius:10px; }
+  .contact { font-size:14px; font-weight:600; }
+  .footer-container { flex-direction:column; gap:20px; }
   .footer-left h2 { font-size:18px; }
+  .email-box { flex-direction:column; }
+  .email-box input, .email-box button { width:100%; font-size:14px; padding:12px; }
   .footer-right { flex-direction:column; gap:15px; }
-  .footer-right h3 { font-size:15px; }
-  .footer-right p { font-size:13px; }
-  .email-box input, .email-box button { width:100%; }
+  .footer-right h3 { font-size:16px; }
+  .footer-right p { font-size:14px; }
+  .footer-bottom { font-size:14px; }
 }
 </style>
 </head>
@@ -169,40 +122,43 @@ body { background:#f5f5f5; display:flex; flex-direction:column; }
 
 <div class="main">
 
-<!-- LEFT -->
-<div class="side">
-  <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Left Image 1">
-  <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Left Image 2">
-  <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061" alt="Left Image 3">
-</div>
-
-<!-- CENTER -->
-<div class="center">
-  <div class="box">
-    <p>For reservations larger than 10 guests, please email directly.</p>
-    <p>7% service fee applies on weekends.</p>
-    <a href="#" class="btn">Cafe 65 - Mahendergarh</a>
-    <a href="#" class="btn">Cafe 65 - Delhi</a>
-    <a href="#" class="btn">Cafe 65 - Gurgaon</a>
-    <a href="#" class="btn">Cafe 65 - Jaipur</a>
-    <a href="#" class="btn">Cafe 65 - Chandigarh</a>
-    <a href="#" class="btn">Cafe 65 - Noida</a>
-    <div class="contact">Contact Us</div>
+  <!-- LEFT SIDE IMAGES -->
+  <div class="side">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Left 1">
+    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Left 2">
+    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061" alt="Left 3">
   </div>
-</div>
 
-<!-- RIGHT -->
-<div class="side">
-  <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Right Image 1">
-  <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348" alt="Right Image 2">
-  <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096" alt="Right Image 3">
-</div>
+  <!-- CENTER -->
+  <div class="center">
+    <div class="box">
+      <p>For reservations larger than 10 guests, please email directly.</p>
+      <p>7% service fee applies on weekends.</p>
+
+      <a href="#" class="btn">Cafe 65 - Mahendergarh</a>
+      <a href="#" class="btn">Cafe 65 - Delhi</a>
+      <a href="#" class="btn">Cafe 65 - Gurgaon</a>
+      <a href="#" class="btn">Cafe 65 - Jaipur</a>
+      <a href="#" class="btn">Cafe 65 - Chandigarh</a>
+      <a href="#" class="btn">Cafe 65 - Noida</a>
+
+      <div class="contact">Contact Us</div>
+    </div>
+  </div>
+
+  <!-- RIGHT SIDE IMAGES -->
+  <div class="side">
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Right 1">
+    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348" alt="Right 2">
+    <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096" alt="Right 3">
+  </div>
 
 </div>
 
 <!-- FOOTER -->
 <section class="footer">
   <div class="footer-container">
+
     <div class="footer-left">
       <h2>SIGN UP TO RECEIVE 10% <br> OFF YOUR FIRST ORDER</h2>
       <div class="email-box">
@@ -222,6 +178,7 @@ body { background:#f5f5f5; display:flex; flex-direction:column; }
         <p>Gift Card</p>
         <p>Contact</p>
       </div>
+
       <div>
         <h3>COLLECTIONS</h3>
         <p>Speciality Beans</p>
@@ -232,10 +189,11 @@ body { background:#f5f5f5; display:flex; flex-direction:column; }
         <p>Merch</p>
       </div>
     </div>
+
   </div>
 
   <div class="footer-bottom">
-    <p>&copy; 2026 Cafe 65. All rights reserved. Powered by Arun kumar</p>
+    &copy; 2026 Cafe 65. All rights reserved. Powered by Arun kumar
   </div>
 </section>
 
