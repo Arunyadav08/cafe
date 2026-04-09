@@ -98,59 +98,58 @@ body { display:flex; flex-direction:column; background:#f5f5f5; }
   color: #555;
 }
 /* FOOTER DESKTOP */
-/* Footer main text */
 .footer {
   background: linear-gradient(to right, #1c1c1c, #2b2b2b);
-  color: white;
-  padding: 40px 20px;
-  font-size: 16px;  /* text size increase */
-  line-height: 1.6;
+  color:white;
+  padding:50px 20px;
 }
-
-/* Left side heading */
+.footer-container {
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:25px;
+}
 .footer-left h2 {
-  margin-bottom: 20px;
-  font-size: 26px;  /* heading size increase */
-  line-height: 1.4;
+  margin-bottom:20px;
+  font-size:18px;
+  line-height:1.4;
 }
-
-/* Email box input & button text */
+.email-box {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:15px;
+}
 .email-box input {
-  padding: 12px;
-  font-size: 16px;   /* input text larger */
-  border: none;
-  flex:1;
+  flex:1 1 60%;
+  padding:12px;
+  border:none;
   border-radius:6px;
+  font-size:18px;
 }
-
 .email-box button {
-  padding: 12px;
-  font-size: 16px;   /* button text larger */
-  border: none;
-  background: white;
-  cursor:pointer;
+  flex:1 1 35%;
+  padding:12px;
+  border:none;
   border-radius:6px;
+  background:white;
+  font-size:22px;
+  cursor:pointer;
 }
-
-/* Right side headings */
-.footer-right h3 {
-  margin-bottom: 12px;
-  font-size: 20px;   /* heading size increase */
+.footer-right {
+  display:flex;
+  gap:60px;
+  flex-wrap:wrap;
 }
-
-/* Right side links */
-.footer-right p {
-  margin: 6px 0;
-  font-size: 16px;   /* text size increase */
-}
-
-/* Footer bottom text */
+.footer-right h3 { margin-bottom:12px; font-size:22px; }
+.footer-right p { margin:6px 0; font-size:18px; }
 .footer-bottom {
-  text-align: center;
-  margin-top: 20px;
-  border-top: 1px solid #444;
-  padding-top: 10px;
-  font-size: 15px;  /* slightly bigger */
+  text-align:center;
+  margin-top:25px;
+  border-top:1px solid #444;
+  padding-top:15px;
+  font-size:14px;
+  font-weight:500;
 }
 /* ---------------- MOBILE ---------------- */
 @media(max-width:900px){
