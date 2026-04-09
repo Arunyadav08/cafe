@@ -5,66 +5,100 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Book Now - Cafe 65</title>
 <style>
-* {margin:0; padding:0; box-sizing:border-box; font-family:sans-serif;}
-
-/* BODY */
-body { display:flex; flex-direction:column; }
+/* RESET & BASE */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', sans-serif; }
+body { background:#f5f5f5; display:flex; flex-direction:column; }
 
 /* MAIN LAYOUT */
-.main { display:flex; height:100vh; flex-wrap:wrap; }
+.main {
+  display:grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  height:100vh;
+  gap:10px;
+  padding:10px;
+}
 
 /* SIDE IMAGES */
-.side { width:25%; display:flex; flex-direction:column; }
-.side img { width:100%; height:33.33%; object-fit:cover; }
+.side {
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.side img {
+  width:100%;
+  flex:1;
+  object-fit:cover;
+  border-radius:10px;
+  transition: transform 0.3s;
+}
+.side img:hover {
+  transform: scale(1.05);
+}
 
 /* CENTER */
 .center {
-  width:50%;
-  display:flex; justify-content:center; align-items:center;
   position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:10px;
+  overflow:hidden;
   background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4');
-  background-size:cover; background-position:center;
+  background-size:cover;
+  background-position:center;
 }
 .center::before {
-  content:""; position:absolute; top:0; left:0;
-  width:100%; height:100%; background:rgba(0,0,0,0.4);
+  content:"";
+  position:absolute; top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.4);
 }
 
 /* BOX */
 .box {
   position:relative; z-index:1;
-  background:white; padding:30px; width:80%; text-align:center;
-  box-shadow:0 0 20px rgba(0,0,0,0.3); border-radius:10px;
+  background:white; padding:30px; width:80%; max-width:400px;
+  text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  border-radius:15px;
 }
-.box p { font-size:13px; margin-bottom:15px; }
+.box p { font-size:14px; margin-bottom:15px; color:#333; }
 .btn {
-  display:inline-block; background:#111; color:white; padding:12px; margin:5px;
-  text-decoration:none; font-size:14px; border-radius:5px; width:48%;
+  display:inline-block; background:#111; color:white;
+  padding:12px 0; margin:5px; text-decoration:none;
+  font-size:14px; border-radius:8px; width:48%;
   text-align:center; transition:0.3s;
 }
 .btn:hover { background:#28a745; }
 .contact { margin-top:15px; font-size:13px; color:#555; }
 
 /* FOOTER */
-.footer { background: linear-gradient(to right, #1c1c1c, #2b2b2b); color:white; padding:40px 20px; }
-.footer-container { display:flex; justify-content:space-between; flex-wrap:wrap; }
-.footer-left h2 { margin-bottom:15px; font-size:16px; }
-.email-box { display:flex; flex-wrap:wrap; margin-bottom:15px; }
-.email-box input { padding:10px; border:none; flex:1 1 60%; margin-bottom:5px; }
-.email-box button { padding:10px; border:none; background:white; cursor:pointer; flex:1 1 35%; }
-.footer-right { display:flex; gap:40px; flex-wrap:wrap; margin-top:20px; }
-.footer-right h3 { margin-bottom:10px; font-size:14px; }
+.footer {
+  background: linear-gradient(to right, #1c1c1c, #2b2b2b);
+  color:white; padding:40px 20px;
+}
+.footer-container { display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; }
+.footer-left h2 { margin-bottom:15px; font-size:18px; line-height:1.3; }
+.email-box { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:15px; }
+.email-box input { flex:1 1 60%; padding:10px; border:none; border-radius:5px; }
+.email-box button { flex:1 1 35%; padding:10px; border:none; background:white; border-radius:5px; cursor:pointer; }
+.footer-right { display:flex; gap:50px; flex-wrap:wrap; }
+.footer-right h3 { margin-bottom:10px; font-size:15px; }
 .footer-right p { margin:5px 0; font-size:13px; }
 .footer-bottom { text-align:center; margin-top:20px; border-top:1px solid #444; padding-top:10px; font-size:12px; }
 
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 900px) {
-  .main { flex-direction:column; height:auto; }
-  .side, .center { width:100%; height:auto; }
-  .side img { height:200px; }
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap:15px;
+    height:auto;
+  }
+  .side img { height:180px; }
+  .center { height:300px; }
   .box { width:90%; padding:20px; }
   .btn { width:48%; margin:1%; }
-  .footer-right { flex-direction:column; gap:20px; }
+  .footer-right { flex-direction:column; gap:15px; }
   .email-box input, .email-box button { width:100%; }
 }
 </style>
@@ -75,9 +109,9 @@ body { display:flex; flex-direction:column; }
 
 <!-- LEFT -->
 <div class="side">
-  <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
-  <img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
-  <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061">
+  <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Left Image 1">
+  <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Left Image 2">
+  <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061" alt="Left Image 3">
 </div>
 
 <!-- CENTER -->
@@ -97,9 +131,9 @@ body { display:flex; flex-direction:column; }
 
 <!-- RIGHT -->
 <div class="side">
-  <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
-  <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
-  <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096">
+  <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Right Image 1">
+  <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348" alt="Right Image 2">
+  <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096" alt="Right Image 3">
 </div>
 
 </div>
