@@ -206,6 +206,11 @@
 
     /* Footer */
     footer {text-align:center; padding:20px; background-color:#f8f9fa; border-top:1px solid #ddd;}
+    @media (max-width: 768px) {
+  .header-center {
+    display: none;
+  }
+}
   </style>
 </head>
 <body background color: #808080;>
@@ -214,7 +219,7 @@
   <div class="header-left">
     <img src="logo.jpg" class="logo">
   </div>
-  <nav class="header-center">
+  <nav class="header-center" id="menu">
     <a href="home.html">Home</a>
     <a href="book.html">Book Now</a>
     <a href="order.html">Order Online</a>
@@ -224,7 +229,7 @@
     <a href="contact.html">Contact</a>
   </nav>
   <div class="header-right">
-    <input type="text" placeholder="Search " class="search">
+  <div class="icon" onclick="toggleMenu()">🔍</div>
     <div class="icon">👤</div>
     <div class="icon">🛒</div>
   </div>
@@ -326,6 +331,25 @@ function openLightbox(src){
 
 function closeLightbox(){
   document.getElementById("lightbox").style.display="none";
+}
+</script>
+  <script>
+function toggleMenu(){
+  let menu = document.getElementById("menu");
+
+  if(menu.style.display === "flex"){
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "flex";
+    menu.style.flexDirection = "column";
+    menu.style.background = "#fff";
+    menu.style.position = "absolute";
+    menu.style.top = "80px";
+    menu.style.left = "0";
+    menu.style.width = "100%";
+    menu.style.padding = "20px";
+    menu.style.boxShadow = "0 5px 10px rgba(0,0,0,0.2)";
+  }
 }
 </script>
     
