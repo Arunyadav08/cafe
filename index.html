@@ -33,6 +33,10 @@
       transition: transform 0.2s;
     }
     .icon:hover {transform:scale(1.1);}
+    .icon.menu-btn{
+  color: blue;
+  font-size: 20px;
+}
 
     /* Hero Section */
     .hero {
@@ -210,7 +214,7 @@
   .header-center {
     display: none;
     position: absolute;
-    top: 80px;
+    top: 100px;
     left: 0;
     width: 100%;
     background: white;
@@ -243,7 +247,7 @@
   <div class="header-right">
     <div class="icon">👤</div>
     <div class="icon">🛒</div>
-    <div class="icon" onclick="toggleMenu()">☰</div>
+    <div class="icon menu-btn" onclick="toggleMenu()">☰</div>
   </div>
 </header>
 
