@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Roasted Bean | Artisanal Coffee</title>
+    <title>The Roasted Bean | Artisanal Coffee & Bakery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --espresso: #3E2723;
             --latte: #8D6E63;
             --cream: #FFF8E1;
             --white: #ffffff;
+            --accent: #D4A373;
         }
 
         body {
@@ -20,7 +22,7 @@
             scroll-behavior: smooth;
         }
 
-        /* --- Updated Top Navigation Bar --- */
+        /* --- Navigation --- */
         .navbar {
             background-color: var(--espresso);
             padding: 1rem 2rem;
@@ -45,49 +47,18 @@
             color: var(--cream);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--latte);
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .search-bar {
-            padding: 5px 10px;
-            border-radius: 20px;
-            border: none;
-            outline: none;
-            font-size: 0.8rem;
-        }
-
-        .cart-btn {
-            background: none;
-            border: 1px solid var(--latte);
-            color: var(--cream);
-            padding: 5px 12px;
-            border-radius: 5px;
-            cursor: pointer;
             transition: 0.3s;
         }
 
-        .cart-btn:hover {
-            background: var(--latte);
-        }
+        .nav-links a:hover { color: var(--accent); }
 
-        /* Hero Section */
+        /* --- Hero --- */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                         url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1000');
             background-size: cover;
             background-position: center;
-            height: 60vh;
+            height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -96,76 +67,124 @@
             text-align: center;
         }
 
-        /* Section Spacing */
-        section { padding: 60px 20px; max-width: 1000px; margin: auto; }
-        h2 { border-bottom: 2px solid var(--latte); display: inline-block; padding-bottom: 5px; }
+        .btn {
+            background: var(--accent);
+            color: var(--espresso);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
 
-        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 20px; }
-        .menu-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #ddd; }
+        .btn:hover { background: var(--white); }
 
-        footer { background: var(--espresso); color: white; text-align: center; padding: 20px; margin-top: 50px; }
+        /* --- Sections --- */
+        section { padding: 80px 20px; max-width: 1100px; margin: auto; }
+        h2 { text-align: center; margin-bottom: 40px; font-size: 2.5rem; }
+
+        /* --- Info Grid (Hours & Location) --- */
+        .info-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .map-responsive {
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
+            border-radius: 10px;
+        }
+
+        .map-responsive iframe {
+            left: 0; top: 0; height: 100%; width: 100%; position: absolute;
+        }
+
+        /* --- Newsletter --- */
+        .newsletter {
+            background: var(--espresso);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .newsletter input {
+            padding: 12px;
+            width: 250px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        /* --- Social Icons --- */
+        .social-links { font-size: 1.5rem; margin-top: 20px; }
+        .social-links a { color: white; margin: 0 10px; transition: 0.3s; }
+        .social-links a:hover { color: var(--accent); }
+
+        footer { background: #1a1110; color: #8d8d8d; text-align: center; padding: 40px; }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">
-            <strong style="color: white; font-size: 1.2rem;">☕ BEAN</strong>
-        </div>
+        <div class="logo"><strong style="color: white; font-size: 1.5rem;">☕ BEAN</strong></div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
             <li><a href="#menu">Menu</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#location">Location</a></li>
+            <li><a href="#visit">Visit Us</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="nav-actions">
-            <input type="text" class="search-bar" placeholder="Search menu...">
-            <button class="cart-btn">🛒 Cart (0)</button>
-        </div>
+        <button class="btn" style="margin-top:0; padding: 8px 15px;">Order Online</button>
     </nav>
 
     <header class="hero" id="home">
-        <h1>THE ROASTED BEAN</h1>
-        <p>Your neighborhood spot for the perfect brew.</p>
+        <h1>Freshly Roasted. Locally Loved.</h1>
+        <p>Experience the finest artisanal coffee in the heart of the city.</p>
+        <a href="#menu" class="btn">View Our Menu</a>
     </header>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Founded in 2024, we source our beans ethically from small-batch farmers to ensure every sip supports a community.</p>
-    </section>
-
-    <section id="menu">
-        <h2>Our Menu</h2>
-        <div class="menu-grid">
-            <div class="category">
-                <h3>Drinks</h3>
-                <div class="menu-item"><span>Caramel Macchiato</span> <strong>$5.00</strong></div>
-                <div class="menu-item"><span>Flat White</span> <strong>$4.50</strong></div>
+    <section id="visit">
+        <h2>Plan Your Visit</h2>
+        <div class="info-container">
+            <div class="hours">
+                <h3><i class="fas fa-clock"></i> Opening Hours</h3>
+                <p><strong>Mon - Fri:</strong> 7:00 AM - 6:00 PM</p>
+                <p><strong>Saturday:</strong> 8:00 AM - 8:00 PM</p>
+                <p><strong>Sunday:</strong> 8:00 AM - 4:00 PM</p>
+                <hr>
+                <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
+                <p>123 Espresso Way, Coffee City, 90210</p>
+                <p>Free Wi-Fi & Pet Friendly Patio 🐾</p>
             </div>
-            <div class="category">
-                <h3>Food</h3>
-                <div class="menu-item"><span>Almond Croissant</span> <strong>$4.25</strong></div>
-                <div class="menu-item"><span>Berry Parfait</span> <strong>$6.00</strong></div>
+            <div class="map-responsive">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3403.123456789!2d-118.4007!3d34.0736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDA0JzI1LjAiTiAxMTjCsDI0JzAyLjUiVw!5e0!3m2!1sen!2sus!4v1625000000000!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
 
-    <section id="reviews">
-        <h2>Customer Reviews</h2>
-        <blockquote>"Best espresso in the city! The vibe is incredibly relaxing." - <em>Sarah J.</em></blockquote>
-        <blockquote>"The avocado toast is a game changer. Friendly staff!" - <em>Mark T.</em></blockquote>
-    </section>
-
-    <section id="location">
-        <h2>Find Us</h2>
-        <p>📍 123 Espresso Way, Coffee City, 90210</p>
-    </section>
+    <div class="newsletter">
+        <h2>Join the Brew Club</h2>
+        <p>Get 10% off your first order and stay updated on seasonal blends.</p>
+        <form>
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn" style="border:none; cursor:pointer;">Subscribe</button>
+        </form>
+    </div>
 
     <footer id="contact">
-        <p>Contact: hello@roastedbean.com | (555) 123-4567</p>
-        <p>&copy; 2026 The Roasted Bean</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p style="margin-top: 20px;">&copy; 2026 The Roasted Bean Coffee Co.</p>
+        <p><small>Privacy Policy | Terms of Service</small></p>
     </footer>
 
 </body>
